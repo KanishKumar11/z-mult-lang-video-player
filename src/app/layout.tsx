@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Multi Language Video Player by Zlaark",
-  description: "A video player with multi-language audio track support, by Zlaark",
+  description:
+    "A video player with multi-language audio track support, by Zlaark",
 };
 
 export default function RootLayout({

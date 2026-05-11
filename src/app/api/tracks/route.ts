@@ -17,10 +17,13 @@ export async function GET() {
 
   try {
     const { stdout } = await exec(ffprobe.path, [
-      "-v", "quiet",
-      "-print_format", "json",
+      "-v",
+      "quiet",
+      "-print_format",
+      "json",
       "-show_streams",
-      "-select_streams", "a",
+      "-select_streams",
+      "a",
       file,
     ]);
 
@@ -36,6 +39,9 @@ export async function GET() {
     return NextResponse.json({ tracks });
   } catch (err) {
     console.error("[/api/tracks]", err);
-    return NextResponse.json({ tracks: [], error: "Could not probe video" }, { status: 500 });
+    return NextResponse.json(
+      { tracks: [], error: "Could not probe video" },
+      { status: 500 },
+    );
   }
 }
